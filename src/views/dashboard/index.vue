@@ -14,7 +14,7 @@ export default {
   components: { adminDashboard, editorDashboard },
   data() {
     return {
-      currentRole: 'adminDashboard'
+      currentRole: 'adminDashboard'// 默认admin用户首页
     }
   },
   computed: {
@@ -23,6 +23,7 @@ export default {
     ])
   },
   created() {
+    console.log(this.roles)
     if (!this.roles.includes('admin')) {
       this.currentRole = 'editorDashboard'
     }
